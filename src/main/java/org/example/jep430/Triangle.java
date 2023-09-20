@@ -9,7 +9,7 @@ public record Triangle(String name, double base, double height) {
 
 	public static void main(String[] args) {
 
-		Triangle[] Triangle = new Triangle[]{
+		Triangle[] reg = new Triangle[]{
 				new Triangle("One", 15.2, 14.4),
 				new Triangle("Two", 8.6, 5.2),
 		};

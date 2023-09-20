@@ -25,13 +25,5 @@ public class SimpleCall {
 			System.out.println("The answer is " + result);
 		}
 
-		final Arena arena = Arena.ofConfined();
-
-		MemorySegment message = SegmentAllocator.slicingAllocator(memSegment).allocateUtf8String("Hello");
-		long length = org.unix.string_h.strlen(str);
-		System.out.println(length);
-
-
-
 	}
 }

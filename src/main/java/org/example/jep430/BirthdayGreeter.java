@@ -73,7 +73,7 @@ public class BirthdayGreeter {
 				"You were born on "
 				+ birthDate.getMonth() + "/" +  birthDate.getDayOfMonth() + "/" + birthDate.getYear() + ".\n" +
 				"You are " + age + " years old." ;
-
+		return message;
 
 	}
 
@@ -84,7 +84,7 @@ public class BirthdayGreeter {
 
 	private static String singleLineWithTemplate(String firstName, String lastName, int age) {
 		String message = STR. "Hello, \{firstName} \{lastName}! You are \{age} years old.";
-		return singleLineGreeting;
+		return message;
 	}
 
 }
