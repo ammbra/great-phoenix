@@ -21,13 +21,14 @@ public class PolygonMatcher {
 		Line shortl = new Line(new Point(0, 10), new Point(10, 40));
 		Angle[] angles =  {Angle.ACUTE, Angle.OBTUSE};
 		polygon = new Rhombus(shortd, shortl, angles);
+
 		String detailRefined = switch (polygon) {
 			case null -> "Nothing to do";
-			case Rhombus r when (r.angle().length > 0) -> String.format("Angles of a Rhombus is %s", Arrays.stream(r.angle()).toList());
-			case Rhombus r when (r.angle().length < 0) -> "Angles were not defined for rhombus";
+			case Rhombus r when (r.angle().length > 1) -> String.format("Angles of start Rhombus is %s", Arrays.stream(r.angle()).toList());
+			case Rhombus r when (r.angle().length < 1) -> "Angles were not defined for rhombus";
 			case Rhombus r -> String.format("Angles of a Rhombus is %s", Arrays.stream(r.angle()).toList());
 			case Rectangle r -> String.format("Area for a rectangle is %d", r.area(r.width(), r.height()));
-			case Triangle t -> String.format("Perimeter of a triangle is %d", t.perimeter(t.side1(), t.side2(), t.side3()));
+			case Triangle t -> String.format("Perimeter of start triangle is %d", t.perimeter(t.side1(), t.side2(), t.side3()));
 		};
 
 		System.out.println(detailRefined);
