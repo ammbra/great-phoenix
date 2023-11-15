@@ -4,37 +4,37 @@ import java.util.*;
 
 public class Intersection {
 
-	public List<Integer> extractCommonElementsOld(List<Integer> list1, List<Integer> list2) {
-		if (list1.isEmpty() || list2.isEmpty()) {
+	public List<Integer> extractCommonElementsOld(List<Integer> firstSeries, List<Integer> secondSeries) {
+		if (firstSeries.isEmpty() || secondSeries.isEmpty()) {
 			throw new UnsupportedOperationException("Please provide two not empty lists");
 		}
 
-		Set<Integer> intersection = new HashSet<>(list1);
+		Set<Integer> intersection = new HashSet<>(firstSeries);
+		intersection.retainAll(secondSeries);
 
-		intersection.retainAll(list2);
-        if (list1.get(0).equals(list2.get(0))) {
-            intersection.add(list1.get(0));
+        if (firstSeries.get(0).equals(secondSeries.get(0))) {
+            intersection.add(firstSeries.get(0));
         }
-        if (list1.get(list1.size() - 1).equals(list2.get(list2.size() - 1))) {
-            intersection.add(list1.get(list1.size() - 1));
+        if (firstSeries.get(firstSeries.size() - 1).equals(secondSeries.get(secondSeries.size() - 1))) {
+            intersection.add(firstSeries.get(firstSeries.size() - 1));
         }
 
         return intersection.stream().toList();
 	}
 
-	public List<Integer> extractCommonElementsNew(List<Integer> list1, List<Integer> list2) {
-		if (list1.isEmpty() || list2.isEmpty()) {
+	public List<Integer> extractCommonElementsNew(List<Integer> firstSeries, List<Integer> secondSeries) {
+		if (firstSeries.isEmpty() || secondSeries.isEmpty()) {
 			throw new UnsupportedOperationException("Please provide two not empty lists");
 		}
-		Set<Integer> intersection = new HashSet<>(list1);
 
-		intersection.retainAll(list2);
+		Set<Integer> intersection = new HashSet<>(firstSeries);
+		intersection.retainAll(secondSeries);
 
-        if (list1.getFirst().equals(list2.getFirst())) {
-            intersection.add(list1.getFirst());
+        if (firstSeries.getFirst().equals(secondSeries.getFirst())) {
+            intersection.add(firstSeries.getFirst());
         }
-        if (list1.getLast().equals(list2.getLast())) {
-            intersection.add(list1.getLast());
+        if (firstSeries.getLast().equals(secondSeries.getLast())) {
+            intersection.add(firstSeries.getLast());
         }
 
         return intersection.stream().toList();

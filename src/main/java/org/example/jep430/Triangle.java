@@ -11,7 +11,7 @@ public record Triangle(String name, double base, double height) {
 
 		Triangle[] reg = new Triangle[]{
 				new Triangle("One", 15.2, 14.4),
-				new Triangle("Two", 8.6, 5.2),
+				new Triangle("Two", 8.6, 5.2)
 		};
 		String table = FMT. """
 				Description     Width    Height     Hypotenuse

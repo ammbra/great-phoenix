@@ -43,8 +43,8 @@ public class Matchmaking {
 
 	private static void inspect(Polygon polygon) {
 		// As of Java 21
-		if (polygon instanceof Rhombus(Line shortd, Line shortl, Angle[] a)) {
-			System.out.println("Starting point of the long diagonal" + shortl.start());
+		if (polygon instanceof Rhombus(Line shortd, Line longd, Angle[] a)) {
+			System.out.println("Starting point of the long diagonal" + longd.start());
 		}
 
 		// As of Java 21
