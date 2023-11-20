@@ -9,14 +9,19 @@ public class PolygonMatcher {
 		Configuration setup = Boundary.DIAGONAL;
 
 		Polygon polygon = switch (setup) {
-			case Boundary.DIAGONAL -> {
+			case Boundary b when b.equals(Boundary.DIAGONAL) -> {
 				Line shortd = new Line(new Point(0, 2), new Point(2, 5));
-				Line shortl = new Line(new Point(0, 10), new Point(10, 40));
+				Line longd = new Line(new Point(0, 10), new Point(10, 40));
 				Angle[] angles =  {Angle.ACUTE, Angle.OBTUSE};
-				yield  new Rhombus(shortd, shortl, angles);
-			};
-			case Measure.AREA -> new Rectangle(10, 5);
-			case Measure.PERIMETER -> new Triangle(1, 2, 3);
+				yield  new Rhombus(shortd, longd, angles);
+			}
+			case Boundary b -> {
+				Line side = new Line(new Point(0, 2), new Point(2, 0));
+				Angle[] angles =  {Angle.RIGHT, Angle.RIGHT};
+				yield  new Rhombus(side, side, angles);
+			}
+			case Measure m when m.equals(Measure.AREA) -> new Rectangle(10, 5);
+			case Measure m -> new Triangle(1, 2, 3);
 		};
 
 		String detail = switch (polygon) {
