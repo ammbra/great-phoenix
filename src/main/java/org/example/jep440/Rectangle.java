@@ -7,4 +7,9 @@ public record Rectangle(int width, int height) implements Polygon {
 
 		return this.width* this.height;
 	}
+
+	@Override
+	public Configuration setup() {
+		return Measure.AREA;
+	}
 }

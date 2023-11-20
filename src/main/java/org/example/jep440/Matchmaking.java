@@ -6,9 +6,9 @@ public class Matchmaking {
 		sum(rectangle);
 
 		Line shortd = new Line(new Point(0, 2), new Point(2, 5));
-		Line shortl = new Line(new Point(0, 10), new Point(10, 40));
+		Line longd = new Line(new Point(0, 10), new Point(10, 40));
 		Angle[] angles =  {Angle.ACUTE, Angle.OBTUSE};
-		Polygon rhombus = new Rhombus(shortd, shortl, angles);
+		Polygon rhombus = new Rhombus(shortd, longd, angles);
 		inspect(rhombus);
 
 		Pair<Polygon> polygonPair = new Pair<>(new Rectangle(10, 5), new Triangle(1, 2, 3));
